@@ -6,7 +6,7 @@ export const useCats = () => {
     queryKey: ['/cats/'],
     queryFn: () => getCats(),
     refetchOnWindowFocus: false,
-    onError: (e) => console.error(`Error getting cats: ${e}`)
+    // onError is not a valid option for useQuery in @tanstack/react-query
   });
 
   return { isLoading, error, data: data, refetch, isRefetching };

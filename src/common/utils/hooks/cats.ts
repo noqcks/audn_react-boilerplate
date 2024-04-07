@@ -2,9 +2,9 @@ import { useQuery } from '@tanstack/react-query';
 import { getCats } from './api/cats';
 
 export const useCats = () => {
-  const { isLoading, error, data, refetch, isRefetching } = useQuery([
-    `/cats/`
-  ], () => getCats(), {
+  const { isLoading, error, data, refetch, isRefetching } = useQuery({
+    queryKey: ['/cats/'],
+    queryFn: () => getCats(),
     refetchOnWindowFocus: false,
     onError: (e) => console.error(`Error getting cats: ${e}`)
   });

@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import ReactTooltip, { TooltipProps } from 'react-tooltip';
+import { Tooltip } from 'react-tooltip';
 
 type Props = {
   children: ReactNode;
@@ -13,7 +13,7 @@ function Tooltip({ children, text, id, options }: Props) {
       <span data-for={id} data-tip={text}>
         {children}
       </span>
-      <ReactTooltip
+      <Tooltip
         {...options}
         effect="solid"
         place={options?.place || 'bottom'}
@@ -23,7 +23,7 @@ function Tooltip({ children, text, id, options }: Props) {
         delayUpdate={100}
       >
         {}
-      </ReactTooltip>
+      </Tooltip>
     </React.Fragment>
   );
 }

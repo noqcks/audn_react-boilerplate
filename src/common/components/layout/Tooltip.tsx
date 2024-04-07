@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Tooltip } from 'react-tooltip';
+import { Tooltip as ReactTooltip } from 'react-tooltip';
 
 type Props = {
   children: ReactNode;
